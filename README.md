@@ -28,6 +28,7 @@ Install the plugin inside your serverless project with npm.
 ```sh
 $ npm i -D serverless-rust
 ```
+
 💡The `-D` flag adds it to your development dependencies in npm speak
 
 💡 This plugin assumes you are building Rustlang lambdas targeting the AWS Lambda "provided" runtime. The [AWS Lambda Rust Runtime](https://github.com/awslabs/aws-lambda-rust-runtime) makes this easy.
@@ -73,11 +74,11 @@ custom:
   # serverless-rust plugin settings
   rust:
     # flags passed to cargo
-    cargoFlags: '--features enable-awesome'
+    cargoFlags: "--features enable-awesome"
     # custom docker tag
-    dockerTag: 'some-custom-tag'
+    dockerTag: "some-custom-tag"
     #  custom docker image
-    dockerImage: 'dockerUser/dockerRepo'
+    dockerImage: "dockerUser/dockerRepo"
 ```
 
 ### 🥼 (experimental) local builds
@@ -89,7 +90,7 @@ The external dependency on docker itself often causes friction as an added depen
 
 Depending on a docker image limits which versions of rust you can build with. The default docker image tracks **stable rust**. Some users might wish to try unstable versions of rust before they stabilize. Local builds enable that.
 
-If you wish to build lambda's locally, use the `dockerless` configuration setting. 
+If you wish to build lambda's locally, use the `dockerless` configuration setting.
 
 ```diff
 custom:
@@ -131,8 +132,8 @@ $ brew install filosottile/musl-cross/musl-cross
 
 Using MUSL comes with some other notable tradeoffs. One of which is complications that arise when depending on dynamically linked dependencies.
 
-* With OpenSSL bindings which you can safely replace is with [rustls](https://github.com/ctz/rustls) or [vendor it](https://docs.rs/openssl/0.10.29/openssl/#vendored)
-* Other limitations are noted [here](https://github.com/KodrAus/rust-cross-compile#limitations).
+- With OpenSSL bindings which you can safely replace is with [rustls](https://github.com/ctz/rustls) or [vendor it](https://docs.rs/openssl/0.10.29/openssl/#vendored)
+- Other limitations are noted [here](https://github.com/KodrAus/rust-cross-compile#limitations).
 
 If you find other MUSL specific issues, please report them by [opening an issue](https://github.com/softprops/serverless-rust/issues/new?template=bug_report.md).
 
@@ -148,7 +149,7 @@ functions:
   test:
     rust:
       # function specific flags passed to cargo
-      cargoFlags: '--features enable-awesome'
+      cargoFlags: "--features enable-awesome"
     # handler value syntax is `{cargo-package-name}.{bin-name}`
     # or `{cargo-package-name}` for short when you are building a
     # default bin for a given package.
@@ -189,20 +190,20 @@ $ npx serverless logs -f hello
 
 ## 🏗️ serverless templates
 
-### ^0.2.*
+### ^0.2.\*
 
-* a minimal echo application - https://github.com/softprops/serverless-aws-rust
-* a minimal http application - https://github.com/softprops/serverless-aws-rust-http
-* a minimal multi-function application - https://github.com/softprops/serverless-aws-rust-multi
-* a minimal apigateway websocket application - https://github.com/softprops/serverless-aws-rust-websockets
-* a minimal kinesis application - https://github.com/softprops/serverless-aws-rust-kinesis
+- a minimal echo application - https://github.com/softprops/serverless-aws-rust
+- a minimal http application - https://github.com/softprops/serverless-aws-rust-http
+- a minimal multi-function application - https://github.com/softprops/serverless-aws-rust-multi
+- a minimal apigateway websocket application - https://github.com/softprops/serverless-aws-rust-websockets
+- a minimal kinesis application - https://github.com/softprops/serverless-aws-rust-kinesis
 
-### 0.1.*
+### 0.1.\*
 
 Older versions targeted the python 3.6 AWS Lambda runtime and [rust crowbar](https://github.com/ilianaw/rust-crowbar) and [lando](https://github.com/softprops/lando) applications
 
-* lando api gateway application - https://github.com/softprops/serverless-lando
-* multi function lando api gateway application - https://github.com/softprops/serverless-multi-lando
-* crowbar cloudwatch scheduled lambda application - https://github.com/softprops/serverless-crowbar
+- lando api gateway application - https://github.com/softprops/serverless-lando
+- multi function lando api gateway application - https://github.com/softprops/serverless-multi-lando
+- crowbar cloudwatch scheduled lambda application - https://github.com/softprops/serverless-crowbar
 
 Doug Tangren (softprops) 2018-2019

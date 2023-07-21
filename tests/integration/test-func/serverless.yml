@@ -1,4 +1,3 @@
-
 service: aws-rust # NOTE: update this with your service name
 provider:
   name: aws

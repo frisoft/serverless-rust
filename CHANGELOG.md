@@ -1,10 +1,10 @@
 # ⚡ 0.4.0 (unreleased)
 
-* use `latest` docker tag by default. This reduces some of the maintenance in publishing this plugin. Users are still able to pin versions as they always have.
+- use `latest` docker tag by default. This reduces some of the maintenance in publishing this plugin. Users are still able to pin versions as they always have.
 
 # ⚡ 0.3.8
 
-* experimental dockerless mode! To enable local builds add the following to your `serverless.yml` file
+- experimental dockerless mode! To enable local builds add the following to your `serverless.yml` file
 
 ```diff
 custom:
@@ -14,26 +14,26 @@ custom:
 
 This comes with some new added expectations about your local environment. Please see the readme section on local builds for more information.
 
-* bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to `0.2.7-rust-1.43.1`
-* The docker image used to build artifacts is now configurable though the `custom.rust.dockerImage` `serverless.yml` config setting. The default remains `softprops/lambda-rust` [#65](https://github.com/softprops/serverless-rust/pull/65)
-* The docker cli is now configurable via `SLS_DOCKER_CLI` environment variable. The default is the first `docker` that resolves on your operating system's path. [#61](https://github.com/softprops/serverless-rust/pull/61)
+- bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to `0.2.7-rust-1.43.1`
+- The docker image used to build artifacts is now configurable though the `custom.rust.dockerImage` `serverless.yml` config setting. The default remains `softprops/lambda-rust` [#65](https://github.com/softprops/serverless-rust/pull/65)
+- The docker cli is now configurable via `SLS_DOCKER_CLI` environment variable. The default is the first `docker` that resolves on your operating system's path. [#61](https://github.com/softprops/serverless-rust/pull/61)
 
 # ⚡ 0.3.7
 
-* bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to `0.2.6-rust-1.39.0` to gain rust [1.37.0](https://blog.rust-lang.org/2019/08/15/Rust-1.37.0.html), [1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), and   [1.39.0](https://blog.rust-lang.org/2019/11/07/Rust-1.39.0.html) features and dropping over 200 megabytes from previous docker images.
-* This plugin now respects your `CARGO_HOME` environment variable if set [#46](https://github.com/softprops/serverless-rust/pull/46). This is useful when you for cases where where you do not have cache cargo artifacts in your `${HOME}/.cargo` directory.
+- bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to `0.2.6-rust-1.39.0` to gain rust [1.37.0](https://blog.rust-lang.org/2019/08/15/Rust-1.37.0.html), [1.38.0](https://blog.rust-lang.org/2019/09/26/Rust-1.38.0.html), and [1.39.0](https://blog.rust-lang.org/2019/11/07/Rust-1.39.0.html) features and dropping over 200 megabytes from previous docker images.
+- This plugin now respects your `CARGO_HOME` environment variable if set [#46](https://github.com/softprops/serverless-rust/pull/46). This is useful when you for cases where where you do not have cache cargo artifacts in your `${HOME}/.cargo` directory.
 
 # ⚡ 0.3.6
 
-*  bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.36.0 to gain [new rust 1.36.0 features](https://blog.rust-lang.org/2019/07/04/Rust-1.36.0.html).
+- bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.36.0 to gain [new rust 1.36.0 features](https://blog.rust-lang.org/2019/07/04/Rust-1.36.0.html).
 
 # ⚡ 0.3.5
 
-*  bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.35.0 to gain [new rust 1.35.0 features](https://blog.rust-lang.org/2019/05/23/Rust-1.35.0.html).
+- bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.35.0 to gain [new rust 1.35.0 features](https://blog.rust-lang.org/2019/05/23/Rust-1.35.0.html).
 
 # ⚡ 0.3.4
 
-- fix a `npx serverless invoke local` for versions of serverless framework `1.40.*` which now emits `package` events  within `invokeLocal` events. [#38](https://github.com/softprops/serverless-rust/pull/38)
+- fix a `npx serverless invoke local` for versions of serverless framework `1.40.*` which now emits `package` events within `invokeLocal` events. [#38](https://github.com/softprops/serverless-rust/pull/38)
 - bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.34.1 to gain [new rust 1.34.1 features](https://blog.rust-lang.org/2019/04/25/Rust-1.34.1.html).
 - use `os.homedir()` instead of `process.env['HOME']` for improved portability
 
@@ -62,7 +62,6 @@ You can still use this plugin with older versions of serverless but `invoke loca
 
 - bump [lambda-rust](https://hub.docker.com/r/softprops/lambda-rust/) docker version to 0.2.1-rust-1.32.0, fixing a bug where cargo binaries named `bootstrap` weren't getting packaged. Reminder: this plugin renames binaries to `bootstrap` for the lambda runtime for you. You don't have do to this manually in your Cargo configuration. This also introduces an efficiency in the way binaries are identified for packaging that may help some windows users.
 - bump serverless version to [`1.37.1`](https://github.com/serverless/serverless/releases/tag/v1.37.1)
-
 
 # ⚡ 0.2.1
 

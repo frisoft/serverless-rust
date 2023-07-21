@@ -7,7 +7,7 @@ node_js:
 # https://docs.travis-ci.com/user/pull-requests/#how-pull-requests-are-built
 branches:
   only:
-  - master
+    - master
 
 services:
   # start docker to enable lambda ci compatible build env
